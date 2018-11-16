@@ -317,6 +317,10 @@ end
   teacher.courses << [Course.find(1), Course.find(2)]
 =end
 
+
+################## ASOCIACIÓN ENTRE CURSOS Y ASIGNATURAS ######################
+
+=begin
 i = 1
 for i in (1..4)
   course = Course.find(i)
@@ -341,7 +345,7 @@ course.subjects << [Subject.find(3), Subject.find(7), Subject.find(9), Subject.f
 course = Course.find(4)
 course.save
 course.subjects << [Subject.find(4), Subject.find(9), Subject.find(13), Subject.find(15), Subject.find(22)]
-
+=end
 
 
 

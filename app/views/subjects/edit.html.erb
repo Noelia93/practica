@@ -1,0 +1,12 @@
+<h1> Modifica una asignatura </h1>
+
+
+<%= form_for @subject do |f| %>
+  <p>
+    <%=  f.label :name  %> <br/>       <!- Esto me crea la entrada de la asignatura->
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+  <%= link_to " Volver a la lista de asignaturas ", subject_path %>
+<% end %>
