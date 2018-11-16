@@ -42,6 +42,7 @@ class SubjectsController < ApplicationController
   end
 
   def destroy
+    @subject = Subject.find(params[:id])
     @subject.destroy
     flash[:danger] = "La asignatura ha sido eliminada"   #cambio los flash danger sale en rojo
     redirect_to subjects_path
