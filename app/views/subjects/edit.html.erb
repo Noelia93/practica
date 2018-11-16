@@ -2,11 +2,19 @@
 
 
 <%= form_for @subject do |f| %>
-  <p>
-    <%=  f.label :name  %> <br/>       <!- Esto me crea la entrada de la asignatura->
-  </p>
-  <p>
+
+  <form>
+    <div class="form-group">
+
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+
+    <!-- <button type="submit" class="btn btn-primary"> Añadir </button> -->
     <%= f.submit %>
-  </p>
-  <%= link_to " Volver a la lista de asignaturas ", subject_path %>
+  </form>
+
+  <%= link_to " Volver a la lista de asignaturas ", subjects_path %>
+
 <% end %>
+
