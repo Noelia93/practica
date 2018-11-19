@@ -14,10 +14,12 @@
     <% @subject.each do |subject| %>
       <tr>
         <td>
-          <%= subject.name %>
+          <%= link_to subject.name, subject_path(subject) %>
         </td>
       </tr>
     <% end %>
   </table>
+
+
 
 

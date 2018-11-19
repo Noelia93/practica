@@ -14,10 +14,8 @@
   <% @teacher.each do |teacher| %>
     <tr>
       <td>
-        <%= teacher.name %>
+        <%= link_to teacher.name, teacher_path(teacher) %>
       </td>
     </tr>
   <% end %>
 </table>
-
-
