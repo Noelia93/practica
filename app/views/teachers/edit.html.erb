@@ -1,13 +1,12 @@
-<h2> Introducir una nueva asignatura </h2>
+<h1> Edita el nombre del profesor </h1>
 
-<!-- #Agrego formulario copiado de Internet.-->
 
-<%= form_for @subject do |f| %>
+<%= form_for @teacher do |f| %>
 
   <form>
     <div class="form-group">
 
-      <%= f.label :Asignatura %>
+      <%= f.label :Profesor %>
       <%= f.text_field :name %>
     </div>
 
@@ -15,4 +14,7 @@
     <%= f.submit %>
   </form>
 
+  <%= link_to " Volver a la lista de profesores ", teachers_path %>
+
 <% end %>
+

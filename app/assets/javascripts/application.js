@@ -14,3 +14,10 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require jquery3
+//= require popper
+//= require bootstrap
+
+
+// las tres ultimas lineas las he añadido después de poner en el gemfile gem 'jquery-rails'. Esto es porque
+// bootstrap trabaja con jquery tb. Además, en stylesheets he cambiado a scss la extensión.

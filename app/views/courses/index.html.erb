@@ -1,0 +1,23 @@
+<h1 align="center"> Los cursos que imparte el centro son </h1>
+
+<!-- Encima de la tabla creo un enlace para que se pueda añadir más asignaturas -->
+<p>
+  <%= link_to "Agregar un nuevo curso", new_course_path %>
+</p>
+
+<table>
+  <tr>
+    <th>
+      Cursos
+    </th>
+  </tr>
+  <% @course.each do |course| %>
+    <tr>
+      <td>
+        <%= link_to course.secondary, course_path(course) %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+

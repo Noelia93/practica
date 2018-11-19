@@ -1,0 +1,23 @@
+<h1 align="center"> Los profesores del centro son </h1>
+
+<!-- Encima de la tabla creo un enlace para que se pueda añadir más asignaturas -->
+<p>
+  <%= link_to "Agregar un nuevo profesor", new_teacher_path %>
+</p>
+
+<table>
+  <tr>
+    <th>
+      Profesores
+    </th>
+  </tr>
+  <% @teacher.each do |teacher| %>
+    <tr>
+      <td>
+        <%= teacher.name %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+

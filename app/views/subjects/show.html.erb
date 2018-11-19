@@ -8,4 +8,8 @@
 
 <%= link_to " Volver a la lista de asignaturas ", subjects_path %>
 
-<%= link_to " elimino ", subject_path(@subject), method: :delete %>
+<!-- Tengo que decirle el método porque si me fijo en rake routes es la misma ruta que show, entonces mostraría-->
+<!-- show por defecto -->
+<p>
+<%= link_to " Eliminar asignatura ", subject_path(@subject), method: :delete %>
+</p>

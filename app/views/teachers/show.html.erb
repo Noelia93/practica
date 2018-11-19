@@ -1,0 +1,15 @@
+<h1> Muestro el profesor seleccionado </h1>
+<p>
+  Profesor: <%= @teacher.name %>
+</p>
+<p>
+  Aquí puedo poner la información relacionada con ella.
+</p>
+
+<%= link_to " Volver a la lista de profesores ", teachers_path %>
+
+<!-- Tengo que decirle el método porque si me fijo en rake routes es la misma ruta que show, entonces mostraría-->
+<!-- show por defecto -->
+<p>
+  <%= link_to " Eliminar profesor ", teacher_path(@teacher), method: :delete %>
+</p>

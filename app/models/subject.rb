@@ -5,5 +5,7 @@ class Subject < ApplicationRecord
   has_many :course_subjects
   has_many :courses, through: :course_subjects
 
-  validates :name, presence:true, length: { minimum: 3, maximum: 50 }
+  #Añadrié más validaciones conforme lo vaya necesitando: p.ej que esté el usuario registrado.
+  validates :name, presence:true, length: { minimum: 3, maximum: 50 }  #para que no haya asignaturas en blanco o inexistentes
+
 end

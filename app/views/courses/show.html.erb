@@ -1,0 +1,9 @@
+<h3> <%= @course.secondary %> de la ESO </h3>
+
+<%= link_to " Profesores ", courses_path %>
+
+<!-- Tengo que decirle el método porque si me fijo en rake routes es la misma ruta que show, entonces mostraría-->
+<!-- show por defecto -->
+<p>
+  <%= link_to " Eliminar curso ", course_path(@course), method: :delete %>
+</p>
