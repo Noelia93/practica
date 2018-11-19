@@ -1,9 +1,39 @@
-<h3> <%= @course.secondary %> de la ESO </h3>
+ <b><i>Profesores de <%= @course.secondary %> de la ESO </i></b>
 
-<%= link_to " Profesores ", courses_path %>
 
-<!-- Tengo que decirle el método porque si me fijo en rake routes es la misma ruta que show, entonces mostraría-->
-<!-- show por defecto -->
-<p>
-  <%= link_to " Eliminar curso ", course_path(@course), method: :delete %>
+  <table>
+    <tr>
+      <td>
+        <ul>
+          <%# distintos modos de mostrar los profesores asociados %>
+          <%# @course.teachers.each do |teacher| %>
+          <%#= teacher.name %>
+          <%#= render teacher %>
+          <%#= render partial: 'teacher', teacher: teacher, title: "My title" %>
+          <%# end %>
+          <%= render @course.teachers %>
+        </ul>
+      </td>
+    </tr>
+  </table>
+
+ <b><i>Asignaturas de <%= @course.secondary %> de la ESO </i></b>
+
+<!-- Voy a mostrar otra lista asociada usando un bucle para ver que se puede hacer tb así.-->
+ <table>
+   <tr>
+     <td>
+       <ul>
+         <% @course.subjects.each do |subject| %>
+           <li><%= subject.name %><br></li>
+         <% end %>
+       </ul>
+     </td>
+   </tr>
+ </table>
+
+
+
+ <p>
+  <%= link_to " Volver a la lista de cursos ", courses_path %>
 </p>
