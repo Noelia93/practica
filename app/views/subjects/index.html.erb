@@ -1,10 +1,5 @@
 <h1 align="center"> Todas las asignaturas son </h1>
 
-<!-- Encima de la tabla creo un enlace para que se pueda añadir más asignaturas -->
-  <p>
-    <%= link_to "Añadir una nueva asignatura", new_subject_path %>
-  </p>
-
   <table>
     <tr>
       <th>
@@ -21,5 +16,5 @@
   </table>
 
 
-
+<button type="button" class="btn btn-success"> <%= link_to "Añadir una nueva asignatura", new_subject_path %></button>
 

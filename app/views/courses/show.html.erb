@@ -34,14 +34,7 @@
 
 
 
- <p>
-  <%= link_to " Volver a la lista de cursos ", courses_path %>
-</p>
-
- <p>
-   <%= link_to "Editar asignatura ",  edit_course_path(@course) %>
- </p>
-
- <p>
-   <%= link_to "Eliminar curso ", course_path(@course), method: :delete %>
- </p>
+ <button type="button" class="btn btn-success"> <%= link_to " Ver todos los cursos ", courses_path %> </button>
+ <button type="button" class="btn btn-warning">  <%= link_to "Editar curso ",  edit_course_path(@course) %> </button>
+ <button type="button" class="btn btn-danger">  <%= link_to "Eliminar curso ", course_path(@course), method: :delete, data: { confirm: "¿Estás seguro que quieres eliminar este curso?"}
+ %> </button>

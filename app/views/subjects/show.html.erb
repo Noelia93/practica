@@ -27,14 +27,7 @@
   </tr>
 </table>
 
-<p>
-  <%= link_to " Volver a la lista de asignaturas ", subjects_path %>
-</p>
-
-<p>
-  <%= link_to "Editar asignatura ",  edit_subject_path(@subject) %>
-</p>
-
-<p>
-  <%= link_to "Eliminar asignatura ", subject_path(@subject), method: :delete %>
-</p>
+<button type="button" class="btn btn-success">  <%= link_to " Volver a la lista de asignaturas ", subjects_path %> </button>
+<button type="button" class="btn btn-warning"> <%= link_to "Editar asignatura ",  edit_subject_path(@subject) %> </button>
+<button type="button" class="btn btn-danger"> <%= link_to "Eliminar asignatura ", subject_path(@subject), method: :delete, data: { confirm: "¿Estás seguro que quieres eliminar esta asignatura?"}
+                                                                                      %> </button>

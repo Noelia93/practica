@@ -1,10 +1,5 @@
 <h1 align="center"> Los cursos que imparte el centro son </h1>
 
-<!-- Encima de la tabla creo un enlace para que se pueda añadir más asignaturas -->
-<p>
-  <%= link_to "Agregar un nuevo curso", new_course_path %>
-</p>
-
 <table>
   <tr>
     <th>
@@ -21,3 +16,4 @@
 </table>
 
 
+<button type="button" class="btn btn-success"> <%= link_to "Agregar un nuevo curso", new_course_path %></button>

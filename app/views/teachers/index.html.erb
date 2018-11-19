@@ -1,10 +1,5 @@
 <h1 align="center"> Los profesores del centro son </h1>
 
-<!-- Encima de la tabla creo un enlace para que se pueda añadir más asignaturas -->
-<p>
-  <%= link_to "Agregar un nuevo profesor", new_teacher_path %>
-</p>
-
 <table>
   <tr>
     <th>
@@ -19,3 +14,5 @@
     </tr>
   <% end %>
 </table>
+
+<button type="button" class="btn btn-success"> <%= link_to "Agregar un nuevo profesor", new_teacher_path %></button>
