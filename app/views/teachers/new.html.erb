@@ -10,6 +10,12 @@
       <%= f.label :Profesor %>
       <%= f.text_field :name %>
     </div>
+    <div>
+      <%= f.collection_check_boxes :course_ids, Course.all, :id, :secondary %><br>
+    </div>
+    <div>
+      <%= f.collection_check_boxes :subject_ids, Subject.all, :id, :name %><br>
+    </div>
 
     <!-- <button type="submit" class="btn btn-primary"> Añadir </button> -->
     <%= f.submit %>

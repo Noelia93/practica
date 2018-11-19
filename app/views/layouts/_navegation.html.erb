@@ -2,34 +2,34 @@
 con los estilos que vaya poniendo en custom. -->
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#"> Instituto </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <%= link_to "Instituto", root_path, class: "navbar-brand", id:"logo" %>
+  <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
-  </button>
+  </button> -->
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#"> Cursos <span class="sr-only">(current)</span></a>
+      <li class="nav-item">
+        <%= link_to "Asignaturas", subjects_path, class: "nav-link" %>
+        <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#"> Profesores </a>
+        <%= link_to "Profesores", teachers_path, class: "nav-link" %>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Asignaturas
+          Cursos
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
+          <!-- No me deja hacer el código que tengo comentado-->
+          <%#  @course.each do |secondary| %>
+            <%#= link_to "#{course.secondary}", courses_path(course), class: "dropdown-item" %>
+          <%# end %>
+          <%= link_to "Primero", course_path(Course.find(1)), class: "dropdown-item" %>
+          <%= link_to "Segundo", course_path(Course.find(2)), class: "dropdown-item" %>
+          <%= link_to "Tercero", course_path(Course.find(3)), class: "dropdown-item" %>
+          <%= link_to "Cuarto", course_path(Course.find(4)), class: "dropdown-item" %>
+      </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>

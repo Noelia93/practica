@@ -22,7 +22,7 @@ class TeachersController < ApplicationController
     @teacher = Teacher.new(teacher_params)
     if @teacher.save
       # do something
-      flash[:success] = "La asignatura se ha añadido correctamente"  #cambio los flash success sale en verde
+      flash[:success] = "El nombre del profesor se ha añadido correctamente"  #cambio los flash success sale en verde
       redirect_to teachers_path(@teacher)
     else
       render 'new'
@@ -42,14 +42,14 @@ class TeachersController < ApplicationController
   def destroy
     #@teacher = Teacher.find(params[:id])
     @teacher.destroy
-    flash[:danger] = "El nombre del profesor ha sido eliminado"   #cambio los flash danger sale en rojo
+    flash[:danger] = "El profesor ha sido eliminado"   #cambio los flash danger sale en rojo
     redirect_to teachers_path
   end
 
   private
 
   def teacher_params
-    params.require(:teacher).permit(:name)
+    params.require(:teacher).permit(:name, course_ids: [], subject_ids: [])
   end
 
   def set_teacher

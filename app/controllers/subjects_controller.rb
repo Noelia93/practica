@@ -55,7 +55,7 @@ class SubjectsController < ApplicationController
 
   # Aquí defino métodos para pasar parámetros en el primer caso, para ahorrar código en el segundo.
   def subject_params
-    params.require(:subject).permit(:name)
+    params.require(:subject).permit(:name, course_ids: [], teacher_ids: [])
   end
 
   def set_subject

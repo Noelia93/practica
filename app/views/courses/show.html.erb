@@ -37,3 +37,11 @@
  <p>
   <%= link_to " Volver a la lista de cursos ", courses_path %>
 </p>
+
+ <p>
+   <%= link_to "Editar asignatura ",  edit_course_path(@course) %>
+ </p>
+
+ <p>
+   <%= link_to "Eliminar curso ", course_path(@course), method: :delete %>
+ </p>
