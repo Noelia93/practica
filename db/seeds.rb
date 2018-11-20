@@ -347,9 +347,34 @@ course.save
 course.subjects << [Subject.find(4), Subject.find(9), Subject.find(13), Subject.find(15), Subject.find(22)]
 =end
 
+#################################### USER ##############################
+=begin
+user = User.new(username: "Alberto Pérez", email: "alberto@example.com", password_digest: "password")
+user.save
 
-
-
+user = User.new(username: "Cristina Ontiveros", email: "cristina@example.com", password_digest: "password")
+user.save
+user = User.new(username: "Enrique Santana", email: "enrique@example.com", password_digest: "password")
+user.save
+user = User.new(username: "Felisa Ortega", email: "felisa@example.com", password_digest: "password")
+user.save
+user = User.new(username: "Javier Gutiérrez", email: "javierg@example.com", password_digest: "password")
+user.save
+user = User.new(username: "Javier Velasco", email: "javierv@example.com", password_digest: "password")
+user.save
+user = User.new(username: "Jorge Ríos", email: "jorge@example.com", password_digest: "password")
+user.save
+user = User.new(username: "Jose Manuel Arena", email: "jose@example.com", password_digest: "password")
+user.save
+user = User.new(username: "Maribel Gómez", email: "maribel@example.com", password_digest: "password")
+user.save
+user = User.new(username: "Miguel Ángel Rosúa", email: "miguelangel@example.com", password_digest: "password")
+user.save
+user = User.new(username: "Mª Carmen Martín", email: "mcarmenm@example.com", password_digest: "password")
+user.save
+user = User.new(username: "Mª Carmen Vallano", email: "mcarmenv@example.com", password_digest: "password")
+user.save
+=end
 
 
 
