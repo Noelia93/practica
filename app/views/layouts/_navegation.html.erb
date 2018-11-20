@@ -31,12 +31,28 @@ con los estilos que vaya poniendo en custom. -->
           <%= link_to "Segundo", course_path(Course.find(2)), class: "dropdown-item" %>
           <%= link_to "Tercero", course_path(Course.find(3)), class: "dropdown-item" %>
           <%= link_to "Cuarto", course_path(Course.find(4)), class: "dropdown-item" %>
-
-
-      </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0 nav-item dropdown">
+      <% if logged_in? %>
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Perfil <%= "Administrador" if current_user.admin? %>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <%= link_to "Editar perfil", edit_user_path(current_user), class:"dropdown-item" %>
+          <%= link_to "Ver perfil", user_path(current_user), class:"dropdown-item" %>
+          <div class="dropdown-divider"></div>
+          <%= link_to "Eliminar perfil ", user_path(current_user), method: :delete,  class:"dropdown-item", data: { confirm: "¿Estás seguro que quieres eliminar este perfil?"}%>
+        </div>
+        <%= link_to 'Cerrar Sesión', logout_path, method: :delete, class:"nav-link" %> <!-- Log out de la barra de navegación-->
+      <% else %>
+          <%= link_to 'Iniciar Sesión', login_path,  class:"nav-link" %> <!-- Log out de la barra de navegación-->
+          <%= link_to 'Registrarse', signup_path, class:"nav-link" %> <!-- Log out de la barra de navegación-->
+      <%end %>
     </form>
   </div>
 </nav>
+
+
+
