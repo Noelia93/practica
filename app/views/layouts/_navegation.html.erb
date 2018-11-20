@@ -17,7 +17,7 @@ con los estilos que vaya poniendo en custom. -->
         <%= link_to "Profesores", teachers_path, class: "nav-link" %>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="courses_path" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Cursos
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -25,10 +25,14 @@ con los estilos que vaya poniendo en custom. -->
           <%#  @course.each do |secondary| %>
             <%#= link_to "#{course.secondary}", courses_path(course), class: "dropdown-item" %>
           <%# end %>
+          <%= link_to "Secundaria", courses_path, class: "dropdown-item" %>
+          <div class="dropdown-divider"></div>
           <%= link_to "Primero", course_path(Course.find(1)), class: "dropdown-item" %>
           <%= link_to "Segundo", course_path(Course.find(2)), class: "dropdown-item" %>
           <%= link_to "Tercero", course_path(Course.find(3)), class: "dropdown-item" %>
           <%= link_to "Cuarto", course_path(Course.find(4)), class: "dropdown-item" %>
+
+
       </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

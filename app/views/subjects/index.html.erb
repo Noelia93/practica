@@ -1,17 +1,34 @@
-<h1 align="center"> Todas las asignaturas son </h1>
+<h1 align="center"> Asignaturas </h1>
 
-  <table>
+  <table id="customers">
     <tr>
       <th>
         Asignatura
       </th>
+      <th>
+        Profesores
+      </th>
+      <th>
+        Cursos
+      </th>
     </tr>
-    <% @subject.each do |subject| %>
+    <!-- Los muestro en la tabla ordenados alfabéticamente -->
+    <% @subject.order("name").each do |subject| %>
       <tr>
-        <td>
-          <%= link_to subject.name, subject_path(subject) %>
-        </td>
-      </tr>
+    <td>
+      <%= link_to subject.name, subject_path(subject) %>
+    </td>
+    <td>
+      <% subject.teachers.each do |teacher| %>
+      <%= link_to teacher.name, teacher_path(teacher) %>  |
+      <%end%>
+    </td>
+    <td>
+      <% subject.courses.each do |course| %>
+      <%= link_to course.secondary, course_path(course) %>  |
+      <%end%>
+    </td>
+  </tr>
     <% end %>
   </table>
 

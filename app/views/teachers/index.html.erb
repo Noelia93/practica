@@ -1,4 +1,4 @@
-<h1 align="center"> Los profesores del centro son </h1>
+<h1 align="center"> Profesores </h1>
 
 <table>
   <tr>
@@ -6,7 +6,8 @@
       Profesores
     </th>
   </tr>
-  <% @teacher.each do |teacher| %>
+  <!-- Los ordeno alfabéticamente -->
+  <% @teacher.order("name").each do |teacher| %>
     <tr>
       <td>
         <%= link_to teacher.name, teacher_path(teacher) %>

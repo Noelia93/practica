@@ -1,4 +1,56 @@
-/* la siguiente línea es para poner en color azul. Es una clase y por eso se comienza por punto */
-.background_blue{
-  background-color: #17a2b861;
+/* La siguiente línea es para poner en color azul. Es una clase y por eso se comienza por punto */
+
+/* Estilo pensado para la portada de la página*/
+.body_simpson{
+  background-image: url("school.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+  height: 700px;
+  }
+
+.letter_white{
+  color: white;
+  font-size: -webkit-xxx-large;
+  font-weight: bold;
+}
+
+.background_prueba{
+  background-color: #ddd;
+}
+
+/* /////////////////////////////////////////////////////////////////////////*/
+/* Esto se refiere al id de la página, recuerda que debe ser único */
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: darkgrey;
+  color: white;
+}
+
+/* //////////////////////////////////////////////////////////////////////// */
+
+.body {
+    margin-top: 15px;
+    background-color: #f2f2f2;
+    color: #2E2F30;
+}
+
+.margin {
+  margin-top: 15px;
 }

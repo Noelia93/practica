@@ -1,19 +1,13 @@
-<h1 align="center"> Los cursos que imparte el centro son </h1>
+<div class="body">
+  <div align="center">
+    <h3> Secundaria </h3>
 
-<table>
-  <tr>
-    <th>
-      Cursos
-    </th>
-  </tr>
-  <% @course.each do |course| %>
-    <tr>
-      <td>
-        <%= link_to course.secondary, course_path(course) %>
-      </td>
-    </tr>
-  <% end %>
-</table>
+      <% @course.each do |course| %>
+            <button type="button" class="btn btn-outline-secondary margin">
+              <%= link_to course.secondary, course_path(course) %>
+            </button>
+      <% end %>
+   </div>
+  <button type="button" class="btn btn-outline-info"> <%= link_to "Agregar un nuevo curso", new_course_path %></button>
+</div>
 
-
-<button type="button" class="btn btn-success"> <%= link_to "Agregar un nuevo curso", new_course_path %></button>
