@@ -1,0 +1,14 @@
+<h2> Introducir un nuevo departamento </h2>
+
+<!-- #Agrego formulario copiado de Internet.-->
+
+<%= form_for @department do |f| %>
+  <form>
+    <div class="form-group">
+
+      <%= f.label :Departamento %>
+      <%= f.text_field :name %>
+    </div>
+    <%= f.submit %>
+  </form>
+<% end %>

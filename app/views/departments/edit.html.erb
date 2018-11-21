@@ -1,0 +1,15 @@
+<h1> Edita el perfil el departamento </h1>
+
+
+<%= form_for @department do |f| %>
+
+  <form>
+    <div class="form-group">
+      <%= f.label :Departamento %>
+      <%= f.text_field :name %>
+    </div>
+    <!-- <button type="submit" class="btn btn-primary"> Añadir </button> -->
+    <%= f.submit %>
+  </form>
+
+<% end %>

@@ -16,6 +16,14 @@ con los estilos que vaya poniendo en custom. -->
       <li class="nav-item">
         <%= link_to "Profesores", teachers_path, class: "nav-link" %>
       </li>
+      <li class="nav-item">
+        <%= link_to "Usuarios", users_path, class: "nav-link" %>
+        <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Departamentos", departments_path, class: "nav-link" %>
+        <span class="sr-only">(current)</span></a>
+      </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="courses_path" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Cursos
@@ -37,7 +45,7 @@ con los estilos que vaya poniendo en custom. -->
     <form class="form-inline my-2 my-lg-0 nav-item dropdown">
       <% if logged_in? %>
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Perfil <%= "Administrador" if current_user.admin? %>
+          Perfil
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <%= link_to "Editar perfil", edit_user_path(current_user), class:"dropdown-item" %>

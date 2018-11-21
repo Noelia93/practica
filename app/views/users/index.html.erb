@@ -1,9 +1,12 @@
 <h1 align="center"> Usuarios </h1>
 
-<table>
+<table id="customers">
   <tr>
     <th>
       Usuarios
+    </th>
+    <th>
+      Responsabilidad
     </th>
   </tr>
   <!-- Los ordeno alfabéticamente -->
@@ -12,7 +15,11 @@
       <td>
         <%= link_to user.username, user_path(user) %>
       </td>
+      <td>
+        <%= "Director" if user.admin? %>
+      </td>
     </tr>
   <% end %>
 </table>
+
 

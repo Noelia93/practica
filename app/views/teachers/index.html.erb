@@ -1,9 +1,12 @@
 <h1 align="center"> Profesores </h1>
 
-<table>
+<table id="customers">
   <tr>
     <th>
       Profesores
+    </th>
+    <th>
+      Responsabilidad
     </th>
   </tr>
   <!-- Los ordeno alfabéticamente -->
@@ -12,8 +15,18 @@
       <td>
         <%= link_to teacher.name, teacher_path(teacher) %>
       </td>
+      <td>
+        <%= link_to teacher.responsibility, teacher_path(teacher) %>
+      </td>
     </tr>
   <% end %>
 </table>
 
-<button type="button" class="btn btn-success"> <%= link_to "Agregar un nuevo profesor", new_teacher_path %></button>
+<%# - raise  %>
+<% if current_user&.admin? %>
+  <button type="button" class="btn btn-success"> <%= link_to "Agregar un nuevo profesor", new_teacher_path %></button>
+<%end%>
+
+
+
+

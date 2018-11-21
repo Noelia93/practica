@@ -85,3 +85,14 @@
 .margin2 {
   margin-top: 400px;
 }
+
+/* esto sirve para la lista que me creo con cada usuario, avatar y artículos que ha escrito*/
+.listing {
+  list-style: none;        /* quita los puntitos negros que aparecía como numerando los usuarios*/
+  padding-left: 450px;   /* dice que el relleno izdo sea de 450, si fuera 0 estaría en el extremo izdo */
+}
+
+/* me la he inventado para dar margen entre la foto del gravatar y el texto de abajo*/
+.gravatar-border{
+  margin-top: 50px;
+}

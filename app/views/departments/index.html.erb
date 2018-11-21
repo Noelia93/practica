@@ -1,0 +1,12 @@
+<div class="body">
+  <div align="center">
+    <h3> Departamentos </h3>
+
+    <% @department.each do |department| %>
+      <button type="button" class="btn btn-outline-secondary margin">
+        <%= link_to department.name, department_path(department) %>
+      </button>
+    <% end %>
+  </div>
+  <button type="button" class="btn btn-outline-info"> <%= link_to "Agregar un nuevo departamento", new_department_path %></button>
+</div>

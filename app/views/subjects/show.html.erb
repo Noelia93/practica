@@ -1,7 +1,7 @@
 <b><i> Información de <%= @subject.name %> </i></b>
 
 
-<table>
+<table id="customers">
   <tr>
     <td>
       <b><p> Se imparte en los cursos: </p></b>
@@ -14,7 +14,7 @@
   </tr>
 </table>
 
-<table>
+<table id="customers">
   <tr>
     <td>
       <b><p> Los profesores que la imparten son: </p></b>
@@ -31,3 +31,8 @@
 <button type="button" class="btn btn-warning"> <%= link_to "Editar asignatura ",  edit_subject_path(@subject) %> </button>
 <button type="button" class="btn btn-danger"> <%= link_to "Eliminar asignatura ", subject_path(@subject), method: :delete, data: { confirm: "¿Estás seguro que quieres eliminar esta asignatura?"}
                                                                                       %> </button>
+
+
+
+
+
