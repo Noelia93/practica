@@ -8,4 +8,8 @@ class Teacher < ApplicationRecord
   belongs_to :department
 
   belongs_to :user
+
+  validates :name, presence: true,
+            uniqueness: { case_sensitive: false },
+            length: { minimum: 3, maximum: 105 }
 end

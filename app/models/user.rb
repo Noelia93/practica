@@ -12,7 +12,7 @@ class User < ApplicationRecord
             format: { with: VALID_EMAIL_REGEX }
   has_secure_password   #es el método que debo usar para contraseñas
 
-  belongs_to :teacher
+  has_one :teacher
 
 end
 
