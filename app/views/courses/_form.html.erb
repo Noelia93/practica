@@ -1,0 +1,27 @@
+<!-- Hago un partial de new y edit de los cursos -->
+
+<%= form_for @course do |f| %>
+  <form>
+    <div class="form-group">
+      <label for="formGroupExampleInput"> <b>Curso</b> </label>
+      <%= f.text_field :secondary, class: 'form-control', placeholder: "Nombre del curso" %>
+    </div>
+    <p><b> Selecciona los profesores que darán clase en el curso </b></p>
+    <div>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <%= f.collection_check_boxes :teacher_ids, Teacher.all, :id, :name %><br>
+        </li>
+      </ul>
+    </div>
+    <p><b> Selecciona las asignaturas que imparten en el curso </b></p>
+    <div>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <%= f.collection_check_boxes :subject_ids, Subject.all, :id, :name %><br>
+        </li>
+      </ul>
+    </div>
+    <%= f.submit "Actualizar", class: "btn btn-primary" %>
+  </form>
+<% end %>

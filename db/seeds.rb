@@ -377,13 +377,89 @@ user.save
 =end
 
 
+=begin
+teacher = Teacher.find(2)
+teacher.department = Department.find(1)
+teacher.department.save
+
+teacher = Teacher.find(3)
+teacher.department = Department.find(1)
+teacher.department.save
+teacher = Teacher.find(4)
+teacher.department = Department.find(1)
+teacher.department.save
+teacher = Teacher.find(5)
+teacher.department = Department.find(1)
+teacher.department.save
+teacher = Teacher.find(6)
+teacher.department = Department.find(1)
+teacher.department.save
+teacher = Teacher.find(7)
+teacher.department = Department.find(1)
+teacher.department.save
+teacher = Teacher.find(8)
+teacher.department = Department.find(1)
+teacher.department.save
+teacher = Teacher.find(9)
+teacher.department = Department.find(1)
+teacher.department.save
+teacher = Teacher.find(10)
+teacher.department = Department.find(1)
+teacher.department.save
+teacher = Teacher.find(11)
+teacher.department = Department.find(1)
+teacher.department.save
+teacher = Teacher.find(12)
+teacher.department = Department.find(1)
+teacher.department.save
+teacher = Teacher.find(13)
+teacher.department = Department.find(1)
+teacher.department.save
+teacher = Teacher.find(14)
+teacher.department = Department.find(1)
+teacher.department.save
+=end
 
 
+=begin
+teacher = Teacher.find(3)
+teacher.user = User.find(5)
+teacher.save
 
-
-
-
-
+teacher = Teacher.find(4)
+teacher.user = User.find(5)
+teacher.save
+teacher = Teacher.find(5)
+teacher.user = User.find(5)
+teacher.save
+teacher = Teacher.find(6)
+teacher.user = User.find(5)
+teacher.save
+teacher = Teacher.find(7)
+teacher.user = User.find(5)
+teacher.save
+teacher = Teacher.find(8)
+teacher.user = User.find(5)
+teacher.save
+teacher = Teacher.find(9)
+teacher.user = User.find(5)
+teacher.save
+teacher = Teacher.find(10)
+teacher.user = User.find(5)
+teacher.save
+teacher = Teacher.find(11)
+teacher.user = User.find(5)
+teacher.save
+teacher = Teacher.find(12)
+teacher.user = User.find(5)
+teacher.save
+teacher = Teacher.find(13)
+teacher.user = User.find(5)
+teacher.save
+teacher = Teacher.find(14)
+teacher.user = User.find(5)
+teacher.save
+=end
 
 
 

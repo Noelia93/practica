@@ -6,7 +6,10 @@
 
 <div class= "gravatar-border" align="center">
   <button type="button" class="btn btn-success"> <%= link_to " Volver a la lista de usuarios ", users_path %> </button>
-  <button type="button" class="btn btn-warning">  <%= link_to "Editar perfil ",  edit_user_path(@user) %> </button>
-  <button type="button" class="btn btn-danger">  <%= link_to "Eliminar perfil ", user_path(@user), method: :delete,  data: { confirm: "¿Estás seguro que quieres eliminar este perfil?"}
-  %> </button>
+  <% if current_user&.admin? %>
+    <button type="button" class="btn btn-warning">  <%= link_to "Editar perfil ",  edit_user_path(@user) %> </button>
+    <button type="button" class="btn btn-danger">  <%= link_to "Eliminar perfil ", user_path(@user), method: :delete,  data: { confirm: "¿Estás seguro que quieres eliminar este perfil?"}
+    %> </button>
+  <%end%>
 </div>
+

@@ -2,23 +2,5 @@
 
 <!-- #Agrego formulario copiado de Internet.-->
 
-<%= form_for @course do |f| %>
+<%= render 'form' %>
 
-  <form>
-    <div class="form-group">
-
-      <%= f.label :Curso %>
-      <%= f.text_field :secondary  %>
-    </div>
-    <div>
-      <%= f.collection_check_boxes :teacher_ids, Teacher.all, :id, :name %><br>
-    </div>
-    <div>
-      <%= f.collection_check_boxes :subject_ids, Subject.all, :id, :name %><br>
-    </div>
-
-    <!-- <button type="submit" class="btn btn-primary"> Añadir </button> -->
-    <%= f.submit %>
-  </form>
-
-<% end %>

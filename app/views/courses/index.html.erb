@@ -8,6 +8,9 @@
             </button>
       <% end %>
    </div>
+  <% if current_user&.admin? %>
   <button type="button" class="btn btn-outline-info"> <%= link_to "Agregar un nuevo curso", new_course_path %></button>
+  <%end%>
 </div>
+
 

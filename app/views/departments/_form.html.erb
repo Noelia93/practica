@@ -1,0 +1,16 @@
+<%= form_for @department do |f| %>
+  <form>
+    <div class="form-group">
+      <b><label for="formGroupExampleInput"> Departamento </label></b>
+      <%= f.text_field :name, class: 'form-control', placeholder: "Nombre del departamento" %>
+    </div>
+    <div>
+      <b><label for="formGroupExampleInput"> Selecciona los profesores que componen el nuevo departamento </label></b>
+      <ul class="list-group">
+        <li class="list-group-item"><%= f.collection_check_boxes :teacher_ids, Teacher.all, :id, :name %><br></li>
+      </ul>
+    </div>
+    <%= f.submit "Actualizar", class: "btn btn-primary" %>
+  </form>
+<% end %>
+

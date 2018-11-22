@@ -11,6 +11,9 @@ class User < ApplicationRecord
             length: { maximum: 105 },
             format: { with: VALID_EMAIL_REGEX }
   has_secure_password   #es el método que debo usar para contraseñas
+
+  belongs_to :teacher
+
 end
 
 # The last code validate username which must be present and unique. In this case with case_sensitive: false, it will

@@ -1,0 +1,26 @@
+<%= form_for @subject do |f| %>
+  <form>
+    <div class="form-group">
+      <label for="formGroupExampleInput"> <b>Asignatura</b> </label>
+      <%= f.text_field :name, class: 'form-control', placeholder: "Introduce la asignatura" %>
+    </div>
+    <!-- para hacer la asociación muestro al usuario las opciones que van ligada a cada asignatura-->
+    <p><b> Selecciona los cursos en los que será impartida</b></p>
+    <div>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <%= f.collection_check_boxes :course_ids, Course.all, :id, :secondary %><br>
+        </li>
+      </ul>
+    </div>
+    <p><b> Selecciona a los docentes que la impartirán </b></p>
+    <div>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <%= f.collection_check_boxes :teacher_ids, Teacher.all, :id, :name %><br>
+        </li>
+      </ul>
+    </div>
+    <%= f.submit "Actualizar", class: "btn btn-primary" %>
+  </form>
+<% end %>

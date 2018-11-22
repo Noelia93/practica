@@ -8,5 +8,7 @@
       </button>
     <% end %>
   </div>
-  <button type="button" class="btn btn-outline-info"> <%= link_to "Agregar un nuevo departamento", new_department_path %></button>
+  <% if current_user&.admin? %>
+   <button type="button" class="btn btn-outline-info"> <%= link_to "Agregar un nuevo departamento", new_department_path %></button>
+  <%end%>
 </div>

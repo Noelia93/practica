@@ -8,6 +8,9 @@
     <th>
       Responsabilidad
     </th>
+    <th>
+      Departamento
+    </th>
   </tr>
   <!-- Los ordeno alfabéticamente -->
   <% @teacher.order("name").each do |teacher| %>
@@ -17,6 +20,9 @@
       </td>
       <td>
         <%= link_to teacher.responsibility, teacher_path(teacher) %>
+      </td>
+      <td>
+        <%= link_to teacher.department.name, departments_path %>
       </td>
     </tr>
   <% end %>

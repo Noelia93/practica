@@ -1,7 +1,7 @@
 <b><i> Perfil de <%= @teacher.name %> </i></b>
 
 
-<table>
+<table id="customers">
   <tr>
     <td>
       <b><p> Imparte clase en: </p></b>
@@ -14,7 +14,7 @@
   </tr>
 </table>
 
-<table>
+<table id="customers">
   <tr>
     <td>
       <b><p> Imparte las asignaturas: </p></b>
@@ -28,11 +28,13 @@
 </table>
 
 
-<button type="button" class="btn btn-success"> <%= link_to " Volver a la lista de profesores ", teachers_path %> </button>
-<button type="button" class="btn btn-warning">  <%= link_to "Editar perfil ",  edit_teacher_path(@teacher) %> </button>
-<button type="button" class="btn btn-danger">  <%= link_to "Eliminar perfil ", teacher_path(@teacher), method: :delete,  data: { confirm: "¿Estás seguro que quieres eliminar este perfil?"}
-                                                   %> </button>
 
+<button type="button" class="btn btn-success"> <%= link_to " Volver a la lista de profesores ", teachers_path %> </button>
+<% if current_user&.admin? %>
+  <button type="button" class="btn btn-warning">  <%= link_to "Editar perfil ",  edit_teacher_path(@teacher) %> </button>
+  <button type="button" class="btn btn-danger">  <%= link_to "Eliminar perfil ", teacher_path(@teacher), method: :delete,  data: { confirm: "¿Estás seguro que quieres eliminar este perfil?"}
+                                                     %> </button>
+<%end%>
 
 
 

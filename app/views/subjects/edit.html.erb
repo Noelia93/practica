@@ -1,20 +1,5 @@
-<h1> Modifica una asignatura </h1>
+<h1> Modifica la asignatura <%=@subject.name %> </h1>
 
 
-<%= form_for @subject do |f| %>
-
-  <form>
-    <div class="form-group">
-
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-    </div>
-
-    <!-- <button type="submit" class="btn btn-primary"> Añadir </button> -->
-    <%= f.submit %>
-  </form>
-
-  <%= link_to " Volver a la lista de asignaturas ", subjects_path %>
-
-<% end %>
+<%= render 'form' %>
 

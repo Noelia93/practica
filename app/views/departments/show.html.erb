@@ -1,8 +1,12 @@
-<%= @department.name %>
+<div>
+  <%= @department.name %>
+</div>
 
 
 
 <button type="button" class="btn btn-success"> <%= link_to " Ver todos los departamentos ", departments_path %> </button>
-<button type="button" class="btn btn-warning">  <%= link_to "Editar departamento ",  edit_department_path(@department) %> </button>
-<button type="button" class="btn btn-danger">  <%= link_to "Eliminar departamento ", department_path(@department), method: :delete, data: { confirm: "¿Estás seguro que quieres eliminar este departamento?"}
-%> </button>
+<% if current_user&.admin? %>
+  <button type="button" class="btn btn-warning">  <%= link_to "Editar departamento ",  edit_department_path(@department) %> </button>
+  <button type="button" class="btn btn-danger">  <%= link_to "Eliminar departamento ", department_path(@department), method: :delete, data: { confirm: "¿Estás seguro que quieres eliminar este departamento?"}
+  %> </button>
+<%end%>

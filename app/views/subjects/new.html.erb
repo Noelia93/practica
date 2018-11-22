@@ -1,24 +1,11 @@
 <h2> Introducir una nueva asignatura </h2>
 
-<!-- #Agrego formulario copiado de Internet.-->
+<%= render 'form' %>
 
-<%= form_for @subject do |f| %>
 
-  <form>
-    <div class="form-group">
 
-      <%= f.label :Asignatura %>
-      <%= f.text_field :name %>
-    </div>
-    <!-- para hacer la asociación muestro al usuario las opciones que van ligada a cada asignatura-->
-    <div>
-      <%= f.collection_check_boxes :course_ids, Course.all, :id, :secondary %><br>
-    </div>
-    <div>
-      <%= f.collection_check_boxes :teacher_ids, Teacher.all, :id, :name %><br>
-    </div>
 
-    <%= f.submit %>
-  </form>
 
-<% end %>
+
+
+

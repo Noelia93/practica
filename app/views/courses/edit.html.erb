@@ -1,20 +1,5 @@
-<h1> Edita el curso </h1>
+<h1> Edita el curso <%= @course.secondary %> de la ESO </h1>
 
 
-<%= form_for @course do |f| %>
-
-  <form>
-    <div class="form-group">
-
-      <%= f.label :Curso %>
-      <%= f.text_field :name %>
-    </div>
-
-    <!-- <button type="submit" class="btn btn-primary"> Añadir </button> -->
-    <%= f.submit %>
-  </form>
-
-  <%= link_to " Volver a la lista de cursos ", courses_path %>
-
-<% end %>
+<%= render 'form' %>
 

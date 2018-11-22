@@ -47,7 +47,7 @@ class DepartmentsController < ApplicationController
 
   # Aquí defino métodos para pasar parámetros en el primer caso, para ahorrar código en el segundo.
   def department_params
-    params.require(:department).permit(:name)
+    params.require(:department).permit(:name, teacher_ids: [])
   end
 
   def set_department
