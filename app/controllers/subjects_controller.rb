@@ -12,6 +12,11 @@ class SubjectsController < ApplicationController
 
   def new
     @subject = Subject.new
+
+    respond_to do |format|     # como le he puesto un remote en el link de new subject, tenemos dos casuisticas:
+      format.html              # el html de siempre, sin el remote en el link
+      format.js                # generar un javascript con el formulario.
+    end
   end
 
   def show
@@ -24,12 +29,16 @@ class SubjectsController < ApplicationController
 
   def create
     @subject = Subject.new(subject_params)
-    if @subject.save
-      # do something
-      flash[:success] = "La asignatura se ha añadido correctamente"  #cambio los flash success sale en verde
-      redirect_to subjects_path(@subject)
-    else
-      render 'new'
+    respond_to do |format|
+      if @subject.save
+        format.html { redirect_to @subject, notice: 'La asignatura se ha añadido correctamente' }
+        format.js
+        format.json { render json: @subject, status: :created, location: @subjects}
+        #redirect_to subjects_path(@subject)
+      else
+        format.html { render action: "new" }
+        format.json { render json: @subject.errors, status: :unprocessable_entity }
+      end
     end
   end
 

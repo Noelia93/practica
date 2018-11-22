@@ -33,5 +33,7 @@
   </table>
 
 <% if current_user&.admin? %>
-  <button type="button" class="btn btn-success"> <%= link_to "Añadir una nueva asignatura", new_subject_path %></button>
+  <button type="button" class="btn btn-success"> <%= link_to "Añadir una nueva asignatura", new_subject_path, remote: true %></button>
+  <div id="form_new">     <!-- id="form_new, identifica mi div aquí, usaré "#form_new" para saber que es aquí donde va el formulario"-->
+  </div>
 <%end%>
