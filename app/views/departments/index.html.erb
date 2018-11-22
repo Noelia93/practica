@@ -1,4 +1,4 @@
-<div class="body">
+<div class="body" id="tabladepartamentos">
   <div align="center">
     <h3> Departamentos </h3>
 
@@ -9,6 +9,9 @@
     <% end %>
   </div>
   <% if current_user&.admin? %>
-   <button type="button" class="btn btn-outline-info"> <%= link_to "Agregar un nuevo departamento", new_department_path %></button>
+   <button type="button" class="btn btn-outline-info"> <%= link_to "Agregar un nuevo departamento", new_department_path, remote:true %></button>
   <%end%>
+</div>
+
+<div id="form_new">   <!-- id="form_new, identifica mi div aquí, usaré "#form_new" para saber que es aquí donde va el formulario"-->
 </div>

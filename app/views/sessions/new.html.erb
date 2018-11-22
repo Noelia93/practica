@@ -1,14 +1,14 @@
+
 <%= form_for(:session, :html => {class: "form-horizontal", role: "form"}, url: login_path) do |f| %>
   <form>
     <div class="form-group">
       <label for="exampleInputEmail1"> Email </label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Introduce tu email"  <%= f.email_field :email %>
+      <%= f.text_field :email, class: 'form-control', placeholder: "Introduce tu email" %>
     </div>
     <div class="form-group">
       <label for="exampleInputPassword1">Contraseña</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña"  <%= f.password_field :password_digest %>
+      <%= f.password_field :password_digest, class: 'form-control', placeholder: "Contraseña", type: 'password' %>
     </div>
-    <button type="submit" class="btn btn-primary" <%= f.submit %> Enviar </button>
+    <%= f.submit "Enviar", class: "btn btn-primary" %>
   </form>
 <%end%>
-

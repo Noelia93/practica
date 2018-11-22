@@ -8,6 +8,11 @@ class DepartmentsController < ApplicationController
 
   def new
     @department = Department.new
+
+    respond_to do |format|     # como le he puesto un remote en el link de new subject, tenemos dos casuisticas:
+      format.html              # el html de siempre, sin el remote en el link
+      format.js                # generar un javascript con el formulario.
+    end
   end
 
   def show
@@ -18,12 +23,15 @@ class DepartmentsController < ApplicationController
 
   def create
     @department = Department.new(department_params)
-    if @department.save
-      # do something
-      flash[:success] = "El departamento se ha añadido correctamente"  #cambio los flash success sale en verde
-      redirect_to departments_path(@department)
-    else
-      render 'new'
+    respond_to do |format|
+      if @department.save
+        format.html { redirect_to @department, notice: 'El departamento ha sido creado correctamente' }
+        format.js
+        format.json { render json: @department, status: :created, location: @users}
+      else
+        format.html { render action: "new" }
+        format.json { render json: @department.errors, status: :unprocessable_entity }
+      end
     end
   end
 

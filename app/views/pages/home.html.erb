@@ -2,5 +2,8 @@
   <h2 align="center"> Instituto Ficticio </h2>
   <button class="button_entrada button_izquierda"> <%= link_to "Entrar como invitado", courses_path %></button>
   <button class="button_entrada center margin1"> <%= link_to "Iniciar Sesión", login_path %> </button>
-  <button class="button_entrada button_derecha margin2"> <%= link_to "Registrarse", signup_path %> </button>
+  <button class="button_entrada button_derecha margin2"> <%= link_to "Registrarse", signup_path, remote: true %> </button>
+</div>
+
+<div id="form_new">   <!-- id="form_new, identifica mi div aquí, usaré "#form_new" para saber que es aquí donde va el formulario"-->
 </div>

@@ -8,6 +8,11 @@ class CoursesController < ApplicationController
 
   def new
     @course = Course.new
+
+    respond_to do |format|     # como le he puesto un remote en el link de new subject, tenemos dos casuisticas:
+      format.html              # el html de siempre, sin el remote en el link
+      format.js                # generar un javascript con el formulario.
+    end
   end
 
   def show
@@ -20,12 +25,15 @@ class CoursesController < ApplicationController
 
   def create
     @course = Course.new(course_params)
-    if @course.save
-      # do something
-      flash[:success] = "El curso se ha añadido correctamente"  #cambio los flash success sale en verde
-      redirect_to courses_path(@course)
-    else
-      render 'new'
+    respond_to do |format|
+      if @course.save
+        format.html { redirect_to @course, notice: 'El nuevo curso ha sido creado' }
+        format.js
+        format.json { render json: @course, status: :created, location: @courses}
+      else
+        format.html { render action: "new" }
+        format.json { render json: @course.errors, status: :unprocessable_entity }
+      end
     end
   end
 
